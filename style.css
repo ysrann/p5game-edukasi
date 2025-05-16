@@ -1,0 +1,103 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #f0f8ff, #d6eaf8);
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+#game-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 2px;
+  width: 500px;
+  height: 500px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.square {
+  border: 1px solid #ccc;
+  background-color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.square.normal { background-color: #fefefe; }
+.square.ladder { background-color: orange; }
+.square.snake { background-color: red; }
+.square.question { background-color: #8e44ad; color: white; }
+
+.player {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.5s ease;
+}
+
+.player.red { background-color: red; }
+.player.yellow { background-color: yellow; }
+
+#dice-container {
+  margin-top: 20px;
+}
+
+#dice-result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#question-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#question-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  max-width: 400px;
+}
+
+#question-modal.hidden {
+  display: none;
+}
+
+#options button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#winner-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: green;
+  margin-top: 20px;
+}
+
+#winner-message.hidden {
+  display: none;
+}
